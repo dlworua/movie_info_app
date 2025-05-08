@@ -86,32 +86,30 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.only(left: 30),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(15),
-                              child: Stack(
-                                // 텍스트가 이미지 바깥까지 나올 수 있게 함
-                                clipBehavior: Clip.none,
-                                children: [
-                                  Image.network(
+                            child: Stack(
+                              // 텍스트가 이미지 바깥까지 나올 수 있게 함
+                              clipBehavior: Clip.none,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.network(
                                     'https://picsum.photos/200/300',
                                     fit: BoxFit.cover,
                                   ),
-                                  Positioned(
-                                    bottom: -15,
-                                    left: -25,
-                                    child: Container(
-                                      child: Text(
-                                        '1',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 80,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
+                                ),
+                                Positioned(
+                                  bottom: -15,
+                                  left: -30,
+                                  child: Text(
+                                    '${index + 1}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 80,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           );
                         },
@@ -127,7 +125,7 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.all(10),
                       child: Text(
                         '평점 높은 순',
                         style: TextStyle(
@@ -142,7 +140,7 @@ class HomePage extends StatelessWidget {
                         itemCount: 20,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: const EdgeInsets.all(3),
+                            padding: const EdgeInsets.only(left: 10),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(15),
                               child: Image.network(
