@@ -66,9 +66,23 @@ class HomePage extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 10),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(15),
-                              child: Image.network(
-                                'https://picsum.photos/200/300',
-                                fit: BoxFit.cover,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return DetailPage();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Hero(
+                                  tag: 'sample_image',
+                                  child: Image.network(
+                                    'https://picsum.photos/200/300',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
                           );
@@ -105,11 +119,25 @@ class HomePage extends StatelessWidget {
                               // 텍스트가 이미지 바깥까지 나올 수 있게 함
                               clipBehavior: Clip.none,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Image.network(
-                                    'https://picsum.photos/200/300',
-                                    fit: BoxFit.cover,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return DetailPage();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  child: Hero(
+                                    tag: 'sample_image',
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(15),
+                                      child: Image.network(
+                                        'https://picsum.photos/200/300',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 Positioned(
@@ -156,11 +184,25 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.only(left: 10),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(15),
-                              child: Image.network(
-                                'https://picsum.photos/200/300',
-                                fit: BoxFit.cover,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return DetailPage();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Hero(
+                                tag: 'sample_image',
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.network(
+                                    'https://picsum.photos/200/300',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
                           );
@@ -193,11 +235,25 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.only(left: 10),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(15),
-                              child: Image.network(
-                                'https://picsum.photos/200/300',
-                                fit: BoxFit.cover,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return DetailPage();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Hero(
+                                tag: 'sample_image',
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.network(
+                                    'https://picsum.photos/200/300',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
                           );
