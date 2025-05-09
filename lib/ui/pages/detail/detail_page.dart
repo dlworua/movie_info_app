@@ -13,6 +13,7 @@ class DetailPage extends StatelessWidget {
               aspectRatio: 1,
               child: Image.network(
                 'https://picsum.photos/200/300',
+                width: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
