@@ -161,7 +161,10 @@ class DetailPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10),
               child: Text(
-                'After a long time, Moana and her friends are back in the ocean. Moana is now a grown-up and has a daughter named Mele. Moana and her friends are back in the ocean. Moana is now a grown-up and has a daughter named Mele.',
+                '''After a long time, Moana and her friends are back in the ocean.
+                 Moana is now a grown-up and has a daughter named Mele.
+                 Moana and her friends are back in the ocean.
+                 Moana is now a grown-up and has a daughter named Mele.''',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
