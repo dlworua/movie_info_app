@@ -201,19 +201,18 @@ class DetailPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '관객수',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
                           '1,234,567',
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '관객수',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
                           ),
                         ),
                       ],
@@ -230,14 +229,6 @@ class DetailPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          '매출액',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
                         Text(
                           '12,345,678',
                           style: TextStyle(
@@ -246,6 +237,13 @@ class DetailPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
+                        Text(
+                          '매출액',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -260,14 +258,6 @@ class DetailPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          '스크린수',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
                         Text(
                           '789',
                           style: TextStyle(
@@ -276,6 +266,13 @@ class DetailPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
+                        Text(
+                          '스크린수',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -290,14 +287,6 @@ class DetailPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          '상영횟수',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
                         Text(
                           '3,456',
                           style: TextStyle(
@@ -306,6 +295,13 @@ class DetailPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
+                        Text(
+                          '상영횟수',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -321,19 +317,18 @@ class DetailPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '평점',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
                           '9.5',
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '평점',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
                           ),
                         ),
                       ],
