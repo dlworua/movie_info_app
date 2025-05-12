@@ -51,7 +51,7 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Text('태그라인', style: TextStyle(height: 1.5, fontSize: 15)),
                   Text('러닝타임', style: TextStyle(fontSize: 15)),
                 ],
