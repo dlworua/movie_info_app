@@ -345,131 +345,51 @@ class DetailPage extends StatelessWidget {
                   Container(
                     width: 150,
                     margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: Colors.blue[900]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '주말관객',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '567,890',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/300'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Container(
                     width: 150,
                     margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: Colors.blue[900]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '주말매출',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '5,678,901',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/301'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Container(
                     width: 150,
                     margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: Colors.blue[900]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '누적관객',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '2,345,678',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/302'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Container(
                     width: 150,
                     margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: Colors.blue[900]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '누적매출',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '23,456,789',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/303'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Container(
                     width: 150,
                     margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: Colors.blue[900]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '순위',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '1위',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/304'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ],
