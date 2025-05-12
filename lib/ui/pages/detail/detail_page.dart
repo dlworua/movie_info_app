@@ -88,7 +88,7 @@ class DetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(25),
-                      border: Border.all(color: Colors.white, width: 1),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Center(
                       child: Text(
@@ -105,7 +105,7 @@ class DetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(25),
-                      border: Border.all(color: Colors.white, width: 1),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Center(
                       child: Text(
@@ -122,7 +122,7 @@ class DetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(25),
-                      border: Border.all(color: Colors.white, width: 1),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Center(
                       child: Text(
@@ -139,7 +139,7 @@ class DetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(25),
-                      border: Border.all(color: Colors.white, width: 1),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Center(
                       child: Text(
@@ -190,11 +190,12 @@ class DetailPage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: [
                   Container(
-                    width: 150,
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.grey[800],
-                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -210,7 +211,7 @@ class DetailPage extends StatelessWidget {
                         Text(
                           '1,234,567',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -219,11 +220,12 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.grey[800],
-                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -239,7 +241,7 @@ class DetailPage extends StatelessWidget {
                         Text(
                           '12,345,678',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -248,11 +250,12 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.grey[800],
-                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -268,7 +271,7 @@ class DetailPage extends StatelessWidget {
                         Text(
                           '789',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -277,11 +280,12 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.grey[800],
-                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -297,7 +301,7 @@ class DetailPage extends StatelessWidget {
                         Text(
                           '3,456',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -306,11 +310,12 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.grey[800],
-                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey, width: 1),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -326,7 +331,7 @@ class DetailPage extends StatelessWidget {
                         Text(
                           '9.5',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -337,8 +342,9 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 10),
             Container(
-              height: 100,
+              height: 130,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
