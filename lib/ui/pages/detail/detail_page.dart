@@ -349,7 +349,7 @@ class DetailPage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: [
                   Container(
-                    width: 150,
+                    width: 200,
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -359,7 +359,7 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    width: 200,
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -369,7 +369,7 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    width: 200,
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -379,7 +379,7 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    width: 200,
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -389,7 +389,7 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    width: 200,
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       image: DecorationImage(
