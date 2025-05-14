@@ -78,9 +78,13 @@ class Movie {
   final String runtime;
   final String overview;
   final String posterPath;
-  final String genres;
-  final String voteAverage;
-  final String boxOffice;
+  final List<Map> genres;
+  final double voteAverage;
+  final int boxOffice;
+
+  // genres는 List<Map>, voteAverage는 double, boxOffice는 int 식으로 다뤄야 안정적인 앱이 됨
+  // 이유_ Dart는 정적 타입 언어이므로 자료형이 명확해야 함, 그래서 fromJson, toJson에서 자료형을 일관되게 다루는 게 매우 중요
+
   Movie({
     required this.title,
     required this.releaseDate,
@@ -96,19 +100,18 @@ class Movie {
   // fromJson 생성자(JSON → Movie 객체로 변환)
   factory Movie.fromJson(Map<String, dynamic> map) {
     return Movie(
-      title: map['title'] ?? '',
+      title: map['title'] ?? '', //null이면 빈 문자열로 대체 (??'')로 안전하게 처리
       releaseDate: map['release_date'] ?? '',
       tagline: map['tagline'] ?? '',
-      runtime: (map['runtime'] != null) ? '${map['runtime']}분' : '',
+      runtime: map['runtime'] ?? 0,
       overview: map['overview'] ?? '',
       posterPath: map['poster_path'] ?? '',
-      genres: (map['genres'] as List<dynamic>)
-          .map((genre) => genre['name'])
-          .join(', '),
-      voteAverage:
-          (map['vote_average'] != null) ? map['vote_average'].toString() : '',
-      boxOffice:
-          (map['revenue'] != null) ? '\$${map['revenue'].toString()}' : '',
+
+      // JSON에서는 List<Map<String, dynamic>> 형태로 오므로
+      //List<Map>.from(...) 으로 변환 List<dynamic> 을 List<Map>으로 안전하게 바꿈
+      genres: List<Map<String, dynamic>>.from(map['genres'] ?? []),
+      voteAverage: (map['vote_average'] ?? 0).toDouble(),
+      boxOffice: map['revenue'] ?? 0,
     );
   }
 
@@ -118,12 +121,13 @@ class Movie {
       'title': title,
       'release_date': releaseDate,
       'tagline': tagline,
-      'runtime': runtime.replaceAll('분', ''), // '95분' → '95'
+      //우리가 저장한 값이 "95분"이므로 JSON에서는 95로 돌려줘야 하기에 '분'을 제거
+      'runtime': runtime,
       'overview': overview,
       'poster_path': posterPath,
-      'genres': genres.split(', ').map((name) => {'name': name}).toList(),
-      'vote_average': double.tryParse(voteAverage) ?? 0.0,
-      'revenue': int.tryParse(boxOffice.replaceAll('\$', '')) ?? 0,
+      'genres': genres,
+      'vote_average': voteAverage,
+      'revenue': boxOffice,
     };
   }
 }
