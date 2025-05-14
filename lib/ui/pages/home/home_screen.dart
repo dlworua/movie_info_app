@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_info_app/ui/pages/detail/detail_page.dart';
 import 'home_view_model.dart';
+import '../detail/detail_page.dart';
 
-class HomePage extends ConsumerStatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends ConsumerStatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  ConsumerState<HomePage> createState() => _HomePageState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   void initState() {
     super.initState();
@@ -69,8 +69,9 @@ class _HomePageState extends ConsumerState<HomePage> {
     return GestureDetector(
       onTap: () => navigateToDetail(context, imageUrl, tag, movie.id),
       child: Container(
-        height: 300,
-        padding: const EdgeInsets.all(15),
+        width: double.infinity,
+        height: 550,
+        padding: const EdgeInsets.all(20),
         child: Hero(
           tag: tag,
           child: ClipRRect(
@@ -100,15 +101,15 @@ class _HomePageState extends ConsumerState<HomePage> {
     String category,
   ) {
     return SizedBox(
-      height: 180,
+      height: 200,
       child: ListView.separated(
         itemCount: movies.length,
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.only(left: 10),
-        separatorBuilder: (_, __) => SizedBox(width: 5),
+        padding: EdgeInsets.only(left: 20),
+        separatorBuilder: (_, __) => SizedBox(width: 15),
         itemBuilder: (context, index) {
           final movie = movies[index];
-          String tag = '${category}_${movie.id}';
+          String tag = '$category-${movie.id}';
           String imageUrl =
               'https://image.tmdb.org/t/p/w500${movie.posterPath ?? ''}';
           return GestureDetector(
@@ -147,11 +148,11 @@ class _HomePageState extends ConsumerState<HomePage> {
       child: ListView.separated(
         itemCount: movies.length,
         scrollDirection: Axis.horizontal,
-        separatorBuilder: (_, __) => SizedBox(width: 5),
-        padding: EdgeInsets.only(left: 30),
+        separatorBuilder: (_, __) => SizedBox(width: 35),
+        padding: EdgeInsets.only(left: 50),
         itemBuilder: (context, index) {
           final movie = movies[index];
-          String tag = 'ranked_${movie.id}';
+          String tag = 'ranked-${movie.id}';
           String imageUrl =
               'https://image.tmdb.org/t/p/w500${movie.posterPath ?? ''}';
           return GestureDetector(
