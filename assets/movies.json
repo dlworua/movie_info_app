@@ -1,5 +1,5 @@
 
-{
+[{
     "adult": false,
     "backdrop_path": "/cJvUJEEQ86LSjl4gFLkYpdCJC96.jpg",
     "belongs_to_collection": null,
@@ -70,4 +70,24 @@
     "video": false,
     "vote_average": 7.135,
     "vote_count": 233
-  }
+  },
+  
+  {
+    "adult": false,
+    "backdrop_path": "/jRvhP4AfFnJ03lCQhp1fie7XPSd.jpg",
+    "genre_ids": [
+      28,
+      53
+    ],
+    "id": 977294,
+    "original_language": "en",
+    "original_title": "Tin Soldier",
+    "overview": "An ex-special forces operative seeks revenge against a cult leader who has corrupted his former comrades, the Shinjas. This leader, known as The Bokushi, promises veterans a purpose and protection, but is revealed to be a destructive influence. The ex-soldier, Nash Cavanaugh, joins forces with military operative Emmanuel Ashburn to infiltrate the Bokushi's fortress and expose his reign of terror",
+    "popularity": 383.402,
+    "poster_path": "/lFFDrFLXywFhy6khHes1LCFVMsL.jpg",
+    "release_date": "2025-05-22",
+    "title": "Tin Soldier",
+    "video": false,
+    "vote_average": 0.0,
+    "vote_count": 0
+  }]
