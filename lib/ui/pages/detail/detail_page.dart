@@ -1,51 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'detail_view_model.dart';
 
-class DetailPage extends ConsumerStatefulWidget {
+class DetailPage extends StatelessWidget {
   final String tag;
-  final String imageUrl;
-  final int movieId;
 
-  const DetailPage({
-    super.key,
-    required this.tag,
-    required this.imageUrl,
-    required this.movieId,
-  });
-
-  @override
-  ConsumerState<DetailPage> createState() => _DetailPageState();
-}
-
-class _DetailPageState extends ConsumerState<DetailPage> {
-  @override
-  void initState() {
-    super.initState();
-  }
+  const DetailPage({super.key, required this.tag});
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(detailViewModelProvider(widget.movieId));
-    final movie = state.movieDetails;
-
-    if (movie == null) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
-    }
-
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
         child: ListView(
           children: [
             Hero(
-              tag: widget.tag,
+              tag: tag,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: Image.network(
-                    widget.imageUrl,
+                    'https://picsum.photos/200/300',
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -60,15 +34,15 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                   Row(
                     children: [
                       Text(
-                        movie.title,
-                        style: const TextStyle(
+                        'Moana 2',
+                        style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Spacer(),
+                      Spacer(),
                       Text(
-                        movie.releaseDate,
+                        '2024-11-27',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.grey,
@@ -77,9 +51,9 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 5),
                   Text(
-                    movie.tagline ?? '',
+                    'The ocean is calling them back.',
                     style: TextStyle(
                       height: 1.5,
                       fontSize: 18,
@@ -88,7 +62,7 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                     ),
                   ),
                   Text(
-                    '${movie.runtime}분',
+                    '100분',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.grey[400],
@@ -104,32 +78,79 @@ class _DetailPageState extends ConsumerState<DetailPage> {
             ),
             Container(
               height: 50,
-              padding: const EdgeInsets.only(top: 5, left: 10),
+              padding: EdgeInsets.only(top: 5, left: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  for (final genre in movie.genres)
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(color: Colors.grey, width: 1),
-                      ),
-                      child: Center(
-                        child: Text(
-                          genre.name,
-                          style: const TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: Colors.grey, width: 1),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Animation',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: Colors.grey, width: 1),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Adventure',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: Colors.grey, width: 1),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Family',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: Colors.grey, width: 1),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Fantasy',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -140,7 +161,7 @@ class _DetailPageState extends ConsumerState<DetailPage> {
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10),
               child: Text(
-                movie.overview,
+                'After a long time, Moana and her friends are back in the ocean. Moana is now a grown-up and has a daughter named Mele. Moana and her friends are back in the ocean. Moana is now a grown-up and has a daughter named Mele.',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
@@ -169,11 +190,8 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
-                    ),
-                    margin: const EdgeInsets.all(8),
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
@@ -183,8 +201,8 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          movie.popularity.toStringAsFixed(0),
-                          style: const TextStyle(
+                          '1,234,567',
+                          style: TextStyle(
                             color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -201,11 +219,8 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
-                    ),
-                    margin: const EdgeInsets.all(8),
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
@@ -215,8 +230,8 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          movie.budget.toString(),
-                          style: const TextStyle(
+                          '12,345,678',
+                          style: TextStyle(
                             color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -233,11 +248,8 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
-                    ),
-                    margin: const EdgeInsets.all(8),
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
@@ -247,8 +259,8 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          movie.voteCount.toString(),
-                          style: const TextStyle(
+                          '789',
+                          style: TextStyle(
                             color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -265,11 +277,8 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
-                    ),
-                    margin: const EdgeInsets.all(8),
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
@@ -279,8 +288,37 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          movie.voteAverage.toString(),
-                          style: const TextStyle(
+                          '3,456',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '상영횟수',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey, width: 1),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '9.5',
+                          style: TextStyle(
                             color: Colors.grey,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -299,25 +337,62 @@ class _DetailPageState extends ConsumerState<DetailPage> {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             Container(
               height: 130,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  for (final image in movie.images)
-                    Container(
-                      width: 200,
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            'https://image.tmdb.org/t/p/w500$image',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
+                  Container(
+                    width: 200,
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/300'),
+                        fit: BoxFit.cover,
                       ),
                     ),
+                  ),
+                  Container(
+                    width: 200,
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/301'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 200,
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/302'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 200,
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/303'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 200,
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/200/304'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
