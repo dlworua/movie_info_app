@@ -94,4 +94,4 @@ flutter:
 
   assets:
     - .env
-    - assets
+    - assets/movies.json
