@@ -22,16 +22,11 @@ class _DetailPageState extends ConsumerState<DetailPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      ref
-          .read(detailViewModelProvider.notifier)
-          .loadMovieDetails(widget.movieId);
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(detailViewModelProvider);
+    final state = ref.watch(detailViewModelProvider(widget.movieId));
     final movie = state.movieDetails;
 
     if (movie == null) {

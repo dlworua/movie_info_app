@@ -17,11 +17,6 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
   @override
   void initState() {
     super.initState();
-    Future(() {
-      ref
-          .read(detailViewModelProvider.notifier)
-          .loadMovieDetails(widget.movieId);
-    });
   }
 
   String _getImageUrl(String? path) {
@@ -33,7 +28,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(detailViewModelProvider);
+    final state = ref.watch(detailViewModelProvider(widget.movieId));
     final movie = state.movieDetails;
 
     return Scaffold(
