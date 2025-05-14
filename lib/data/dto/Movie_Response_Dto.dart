@@ -40,6 +40,16 @@ class MovieResponseDto {
   });
 
   factory MovieResponseDto.fromJson(Map<String, dynamic> json) {
+    // 장르 ID들을 저장할 리스트를 초기화
+    List<int> genreIds = [];
+    // 1. 'genre_ids'가 존재하면 그대로 사용 (int 리스트)
+    if (json['genre_ids'] != null) {
+      genreIds = List<int>.from(json['genre_ids']);
+    }
+    // 2. 'genres'가 존재하면, 객체 배열에서 'id'만 추출
+    else if (json['genres'] != null) {
+      genreIds = (json['genres'] as List).map((e) => e['id'] as int).toList();
+    }
     return MovieResponseDto(
       id: json['id'],
       title: json['title'] ?? '',
@@ -47,7 +57,7 @@ class MovieResponseDto {
       overview: json['overview'] ?? '',
       posterPath: json['poster_path'] ?? '',
       voteAverage: (json['vote_average'] ?? 0).toDouble(),
-      genreIds: List<int>.from(json['genre_ids'] ?? []),
+      genreIds: genreIds,
     );
   }
 

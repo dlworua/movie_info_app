@@ -10,10 +10,12 @@ class MovieAssetDataSourceImpl implements MovieDataSource {
   final AssetBundle _assetBundle;
 
   @override
-  Future<List<MovieResponsDto>> fetchMovies() async {
-    final jsonString = await rootBundle.loadString('assets/movie.json');
-    final list = jsonDecode(jsonString); // 전체 맵
-    final results = jsonMap['results'] as List; // 'results'만 추출
-    return results.map((e) => MovieResponseDto.fromJson(e)).toList();
+  Future<List<MovieResponseDto>> fetchMovies() async {
+    // JSON 파일을 문자열로 로드
+    final jsonString = await _assetBundle.loadString('assets/movie.json');
+    // JSON을 List로 디코딩
+    final List<dynamic> jsonList = jsonDecode(jsonString);
+    // List<dynamic>을 MovieResponseDto 리스트로 변환
+    return jsonList.map((e) => MovieResponseDto.fromJson(e)).toList();
   }
 }
