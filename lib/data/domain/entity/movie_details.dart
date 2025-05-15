@@ -74,13 +74,13 @@
 class Movie {
   final String title;
   final String releaseDate;
-  final String tagline;
-  final String runtime;
+  final String? tagline;
+  final String? runtime;
   final String overview;
   final String posterPath;
-  final List<Map> genres;
+  final List<Map>? genres;
   final double voteAverage;
-  final int boxOffice;
+  final int? boxOffice;
 
   // genres는 List<Map>, voteAverage는 double, boxOffice는 int 식으로 다뤄야 안정적인 앱이 됨
   // 이유_ Dart는 정적 타입 언어이므로 자료형이 명확해야 함, 그래서 fromJson, toJson에서 자료형을 일관되게 다루는 게 매우 중요
@@ -88,13 +88,13 @@ class Movie {
   Movie({
     required this.title,
     required this.releaseDate,
-    required this.tagline,
-    required this.runtime,
+    this.tagline,
+    this.runtime,
     required this.overview,
     required this.posterPath,
-    required this.genres,
+    this.genres,
     required this.voteAverage,
-    required this.boxOffice,
+    this.boxOffice,
   });
 
   // fromJson 생성자(JSON → Movie 객체로 변환)

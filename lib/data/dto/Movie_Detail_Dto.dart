@@ -73,7 +73,7 @@
 //   "vote_count": 233
 // }
 
-class Movie {
+class MovieDetailDTO {
   final String title;
   final String releaseDate;
   final String tagline;
@@ -87,7 +87,7 @@ class Movie {
   // genres는 List<Map>, voteAverage는 double, boxOffice는 int 식으로 다뤄야 안정적인 앱이 됨
   // 이유_ Dart는 정적 타입 언어이므로 자료형이 명확해야 함, 그래서 fromJson, toJson에서 자료형을 일관되게 다루는 게 매우 중요
 
-  Movie({
+  MovieDetailDTO({
     required this.title,
     required this.releaseDate,
     required this.tagline,
@@ -100,8 +100,8 @@ class Movie {
   });
 
   // fromJson 생성자(JSON → Movie 객체로 변환)
-  factory Movie.fromJson(Map<String, dynamic> map) {
-    return Movie(
+  factory MovieDetailDTO.fromJson(Map<String, dynamic> map) {
+    return MovieDetailDTO(
       title: map['title'] ?? '', //null이면 빈 문자열로 대체 (??'')로 안전하게 처리
       releaseDate: map['release_date'] ?? '',
       tagline: map['tagline'] ?? '',
@@ -133,4 +133,3 @@ class Movie {
     };
   }
 }
-
